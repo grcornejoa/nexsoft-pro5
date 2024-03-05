@@ -133,7 +133,7 @@ class ItemsImport implements ToCollection
                 $category = $category_name ? Category::updateOrCreate(['name' => $category_name]) : null;
                 $brand = $brand_name ? Brand::updateOrCreate(['name' => $brand_name]) : null;
                 // dd($row, $lot_code ,$date_of_due, $category, $brand);
-                $_date_of_due = Date::excelToDateTimeObject($date_of_due)->format('Y-m-d');
+                // $_date_of_due = Date::excelToDateTimeObject($date_of_due)->format('Y-m-d');
                 if ($lot_code && $date_of_due) {
 
                     $_date_of_due = Date::excelToDateTimeObject($date_of_due)->format('Y-m-d');
@@ -200,8 +200,7 @@ class ItemsImport implements ToCollection
                         'warehouse_id' => $warehouse_id,
                         'image' => $file_name,
                         'image_medium' => $file_name_medium,
-                        'image_small' => $file_name_small,
-                        'date_of_due' => $_date_of_due
+                        'image_small' => $file_name_small
                     ]);
                 }
 
