@@ -4,7 +4,8 @@
     ->groupby('item_id')
     ->get()->max('total');
 
-    @endphp<!DOCTYPE html>
+    @endphp
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -28,6 +29,7 @@
                 <tr>
                     <th>#</th>
                     <th>Código interno</th>
+                    <th>Código de barras</th>
                     <th>Nombre</th>
                     <th>Nombre alternativo</th>
                     <th>Descripción</th>
@@ -69,6 +71,7 @@
                     <tr>
                         <td class="celda">{{$loop->iteration}}</td>
                         <td class="celda">{{$value->internal_id}}</td>
+                        <td class="celda">{{$value->barcode}}</td>
                         <td class="celda">{{$value->name}}</td>
                         <td class="celda">{{$value->second_name }}</td>
                         <td class="celda">{{$value->description }}</td>

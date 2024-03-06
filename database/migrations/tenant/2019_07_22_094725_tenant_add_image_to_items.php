@@ -14,7 +14,7 @@ class TenantAddImageToItems extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->string('image')->default('imagen-no-disponible.jpg')->after('calculate_quantity');
+            $table->string('image')->default('imagen-no-disponible.jpg')->after('calculate_quantity')->nullable();
             //
         });
     }

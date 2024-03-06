@@ -16,11 +16,10 @@ class TenantItemImagesTable extends Migration
         Schema::create('item_images', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('item_id');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->foreign('item_id')->references('id')->on('items');
-
         });
     }
 
