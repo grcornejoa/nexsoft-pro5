@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
-class TenantAddImageToItems extends Migration
+class TenantModifyColumnImageItemsNullableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +15,8 @@ class TenantAddImageToItems extends Migration
     public function up()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->string('image')->default('imagen-no-disponible.jpg')->after('calculate_quantity');
+
+            DB::statement('ALTER TABLE `items` MODIFY `image` varchar(255) NULL;');
             //
         });
     }
@@ -27,7 +29,8 @@ class TenantAddImageToItems extends Migration
     public function down()
     {
         Schema::table('items', function (Blueprint $table) {
-            $table->dropColumn('image');
+
+            $table->dropColumn(['image']);
             //
         });
     }
