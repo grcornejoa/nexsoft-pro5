@@ -10,9 +10,11 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithColumnWidths;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
+use Maatwebsite\Excel\Concerns\WithMapping;
 use PhpOffice\PhpSpreadsheet\Reader\Xls\ConditionalFormatting;
 use PhpOffice\PhpSpreadsheet\Shared\Date;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat\DateFormatter;
 use PhpOffice\PhpSpreadsheet\Style\ConditionalFormatting\Wizard\TextValue;
 use Maatwebsite\Excel\Concerns\WithCustomValueBinder;
 use PhpOffice\PhpSpreadsheet\Cell\DefaultValueBinder;
@@ -24,7 +26,7 @@ use PhpOffice\PhpSpreadsheet\Cell\DataType;
  *
  * @package App\Exports
  */
-class ItemExport extends DefaultValueBinder implements WithCustomValueBinder, WithColumnFormatting, FromView, ShouldAutoSize, WithColumnWidths
+class ItemExport extends DefaultValueBinder implements WithCustomValueBinder, WithColumnFormatting, FromView, ShouldAutoSize, WithColumnWidths, WithMapping
 {
     use Exportable;
 
@@ -35,29 +37,34 @@ class ItemExport extends DefaultValueBinder implements WithCustomValueBinder, Wi
         return $this;
     }
 
+    public function map($items): array
+    {
+        return [
+            \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($items->date_of_due)->format('d/m/Y')
+
+        ];
+    }
+
+
+    /*
     public function bindValue(Cell $cell, $value)
     {
-        $numericalColumns = ['C']; // columns with numerical values
+        $numericalColumns = ['M']; // columns with numerical values
 
-        /*
         if (!in_array($cell->getColumn(), $numericalColumns) || $value == '' || $value == null) {
             $cell->setValueExplicit($value, DataType::TYPE_STRING);
 
             return true;
         }
-*/
-
         if (in_array($cell->getColumn(), $numericalColumns) || $value == '' || $value == null) {
             $cell->setValueExplicit((float) $value, DataType::TYPE_STRING);
 
             return true;
         }
-
-
-
         // else return default behavior
         return parent::bindValue($cell, $value);
     }
+*/
 
     /**
      * @return array
@@ -66,7 +73,8 @@ class ItemExport extends DefaultValueBinder implements WithCustomValueBinder, Wi
     public function columnFormats(): array
     {
         return [
-            'M' => NumberFormat::FORMAT_DATE_DDMMYYYY
+            'C' => NumberFormat::FORMAT_NUMBER
+
 
         ];
     }
@@ -90,8 +98,8 @@ class ItemExport extends DefaultValueBinder implements WithCustomValueBinder, Wi
     public function columnWidths(): array
     {
         return [
-            'B' => 35,
-            'C' => 35,
+            'B' => 25,
+            'C' => 25,
             'F' => 70,
             'M' => 20
         ];
