@@ -50,6 +50,7 @@
                         <th>{{$txt}}</th>
 
                         @endforeach
+                    <th>Stock</th>
                     <th>Precio</th>
                     <th>Fecha de vencimiento</th>
                     @for($i=0;$i<$max_prices_columns;$i++)
@@ -92,6 +93,7 @@
                             ?>
                             <td class="celda">{{$txt}}</td>
                         @endforeach
+                        <td class="celda">{{$value->stock }}</td>
                         <td class="celda">{{$value->sale_unit_price }}</td>
                         <td class="celda">{{$value->date_of_due }}</td>
                         @for($i=0;$i<$max_prices_columns;$i++)

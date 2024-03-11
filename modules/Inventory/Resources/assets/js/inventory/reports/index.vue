@@ -135,7 +135,7 @@
                         <div class="col-auto">
                             <el-button :disabled="records.length <= 0"
                                        :loading="loadingPdf"
-                                       @click="clickExport('pdf')"><i class="fa fa-file-pdf"></i> Exportar PDF
+                                       @click="clickExport('pdf')"><i class="fa fa-file-pdf"></i> Exportar PDFs
                             </el-button>
                         </div>
                         <div class="col-auto">
