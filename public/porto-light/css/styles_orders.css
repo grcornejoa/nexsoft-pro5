@@ -1,5 +1,5 @@
 /* Global */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: #001141;
@@ -17,7 +17,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 
 body, .product-title, .add-cart {
-font-family: 'Poppins', sans-serif;
+font-family: 'Kanit', sans-serif;
 }
 
 nav.main-nav.flex-grow-1 .menu {
@@ -204,7 +204,7 @@ figure.product-image-container:hover {
     font-size: 28px;
 }
 .price-box {
-    font: 400 0/1 "Poppins",sans-serif;
+    font: 400 0/1 Kanit,sans-serif;
     color: #00112e;
     width: 50%;
     display: inline-block;
@@ -220,7 +220,7 @@ figure.product-image-container:hover {
     border-radius: 5px;
 }
 .btn-quickview {
-    font: 400 1.3rem/1 "Poppins",sans-serif;
+    font: 400 1.3rem/1 Kanit,sans-serif;
     background-color: rgb(0 18 46 / 74%);
     border-radius: 5px;
     margin: 0 20px;
@@ -304,7 +304,7 @@ h2.product-title {
 }
 .widget-info li h4{
     color: #60769a;
-    font: 600 1.4rem/1.5 "Poppins",sans-serif;
+    font: 600 1.4rem/1.5 Kanit,sans-serif;
     white-space: unset;
     text-transform: unset;
 }
@@ -343,7 +343,7 @@ h2.product-title {
     color: #24da94;
 }
 nav.nav-tabs .nav-item .nav-link {
-    font: 700 1.4rem/1 "Poppins",sans-serif;
+    font: 700 1.4rem/1 Kanit,sans-serif;
     color: #60769a;
 }
 .nav.nav-tabs {
@@ -408,7 +408,7 @@ a.paction.add-cart.whatsapp {
 }
 .footer .widget-title {
     color: #60769a;
-    font: 700 1.6rem/1.1 "Poppins",sans-serif;
+    font: 700 1.6rem/1.1 Kanit,sans-serif;
     text-transform: unset;
 }
 ul.contact-info svg {
@@ -566,7 +566,7 @@ label{
     border-color: #24da94;
 }
 .btn {
-    font-family: "Poppins",sans-serif;
+    font-family: Kanit,sans-serif;
 }
 @media screen and (min-width: 992px){
     .modal-dialog {

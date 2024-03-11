@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Admin Reseller*/
 
@@ -96,7 +96,7 @@ a:hover, a:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
     color: #041a6e;
-    font: bold 25px / 100px Poppins, Serif;
+    font: bold 25px / 100px Kanit, Serif;
 }
 .pricing-table li {
     border-top: none;
@@ -114,7 +114,7 @@ a:hover, a:focus {
 
 html, body {
     background: #f7f8fa;
-    font-family: "Poppins", sans-serif;
+    font-family: Kanit, sans-serif;
     color: #60769a;
 }
 ul.nav-main li .nav-children li a {
@@ -366,7 +366,7 @@ html.sidebar-left-collapsed .sidebar-left .nano:hover {
 }
 .auth a, .auth h1, .auth h2, .auth h3, .auth h4, .auth h5, .auth h6, .auth label, .auth p, .auth span {
     color: #60769a;
-    font-family: 'Poppins';
+    font-family: 'Kanit';
 }
 .form-control {
     color: #0e3069;
