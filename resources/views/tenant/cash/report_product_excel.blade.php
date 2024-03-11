@@ -135,8 +135,8 @@ $title = "Reporte POS - ".$cash->user->name." - ".$cash->date_opening." ".$cash-
                                     <td class="celda">{{ $loop->iteration }}</td>
                                     <td class="celda">{{ $item['description'] }}</td>
                                     <td class="celda">{{ $item['quantity'] }}</td>
-                                    <td class="celda" style="text-align: right">{{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($item['unit_value']) }}</td>
-                                    <td class="celda" style="text-align: right">{{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($item['sub_total']) }}</td>
+                                    <td class="celda" style="text-align: right">{{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($item['unit_value'] * 1.18) }}</td>
+                                    <td class="celda" style="text-align: right">{{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($item['sub_total'] * 1.18) }}</td>
                                     <td class="celda">{{ $item['number_full'] }}</td>
                                 </tr>
                                 @php
@@ -151,7 +151,7 @@ $title = "Reporte POS - ".$cash->user->name." - ".$cash->date_opening." ".$cash-
                                 <td class="celda"></td>
                                 <td class="celda"> Totales </td>
                                 <td class="celda" style="text-align: right">
-                                    {{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($subTotal) }}
+                                    {{ App\CoreFacturalo\Helpers\Template\ReportHelper::setNumber($subTotal * 1.18)  }}
                                 </td>
                                 <td class="celda"></td>
 
