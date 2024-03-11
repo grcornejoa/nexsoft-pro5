@@ -148,7 +148,7 @@
                             {{ $item['name'] }}
                         </td>
                         <td class="celda">
-                            {{ $item['sum'] * 1.18}}
+                            {{ $item['sum']}}
                         </td>
                     </tr>
                 @endforeach
